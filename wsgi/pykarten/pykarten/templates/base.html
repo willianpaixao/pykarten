@@ -1,0 +1,65 @@
+{% extends "foundation/base.html" %}
+
+{% load humanize %}
+{% load i18n %}
+
+{% block title %}PYKARTEN{% endblock title %}
+
+{% block base_body %}
+
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="{% url 'home' %}">PYKARTEN<sup>beta</sup></a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+            <a href=""><span>{% trans "Menu" %}</span></a>
+        </li>
+    </ul>
+
+    <section class="top-bar-section">
+        <ul class="right">
+            <li class="search">
+                <form>
+                    <input type="search">
+                </form>
+            </li>
+            <li class="has-dropdown">
+            <a href=""><i class="fi-torso"></i>&nbsp;{% trans "Account" %}</a>
+                <ul class="dropdown">
+                    <li>
+                        <a href=""><i class="fi-wrench"></i>&nbsp;
+                            {% trans "Preferences" %}
+                        </a>
+                    </li>
+                    <li>
+                    <a href=""><i class="fi-power"></i>&nbsp;
+                        {% trans "Log Out" %}
+                    </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+            <a href=""><i class="fi-info"></i>&nbsp;{% trans "Help" %}</a>
+                <ul class="dropdown">
+                    <li><a href="">{% trans "About us" %}</a></li>
+                    <li><a href="">{% trans "Documentation" %}</a></li>
+                    <li><a href="">{% trans "Support" %}</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</nav>
+
+<div class="row">
+    <div class="large-2 column">
+        {% block side_bar %}{% endblock %}
+    </div>
+    <div class="large-8 column">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="large-2 column"></div>
+</div>
+
+{% endblock %}
+
