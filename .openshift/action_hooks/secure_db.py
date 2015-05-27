@@ -2,13 +2,11 @@
 import hashlib, imp, os, sqlite3
 
 # Load the OpenShift helper library
-# GETTING-STARTED: change 'myproject' to your project name:
-lib_path      = os.environ['OPENSHIFT_REPO_DIR'] + 'wsgi/myproject/'
+lib_path      = os.environ['OPENSHIFT_REPO_DIR'] + 'wsgi/pykarten/'
 modinfo       = imp.find_module('openshiftlibs', [lib_path])
 openshiftlibs = imp.load_module('openshiftlibs', modinfo[0], modinfo[1], modinfo[2])
 
 # Open the database
-# GETTING-STARTED: change 'db.sqlite3' to your sqlite3 database:
 conn = sqlite3.connect(os.environ['OPENSHIFT_DATA_DIR'] + '/db.sqlite3')
 c    = conn.cursor()
 
