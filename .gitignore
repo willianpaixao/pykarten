@@ -1,7 +1,8 @@
-*.py[co]
-*.sw[po]
 *.bak
 *.orig
+*.py[co]
+*.sw[po]
 *~
+.env/
 .project
 .pydevproject
