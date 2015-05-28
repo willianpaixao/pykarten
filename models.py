@@ -26,7 +26,7 @@ class Box(models.Model):
     more sections.
     """
 
-    created_by = models.ForeignKey(User, related_name="Box Created By",
+    created_by = models.ForeignKey(User, related_name="box_created_by",
             null=True, on_delete=models.SET_NULL)
     creation_time = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
@@ -51,7 +51,7 @@ class Section(models.Model):
     contains a long and short name called title and short respectfully.
     """
 
-    created_by = models.ForeignKey(User, related_name="Section Created By",
+    created_by = models.ForeignKey(User, related_name="sec_created_by",
             null=True, on_delete=models.SET_NULL)
     box = models.ForeignKey(Box, null=True, on_delete=models.SET_NULL)
     creation_time = models.DateTimeField(auto_now_add=True)
@@ -69,7 +69,7 @@ class Section(models.Model):
         return reverse('sec_edit', kwargs={'pk': self.pk})
 
 class Subsection(models.Model):
-    created_by = models.ForeignKey(User, related_name="Subsection Created By",
+    created_by = models.ForeignKey(User, related_name="sub_created_by",
             null=True, on_delete=models.SET_NULL)
     section = models.ForeignKey(Section, null=True, on_delete=models.SET_NULL)
     creation_time = models.DateTimeField(auto_now_add=True)
@@ -94,7 +94,7 @@ class Card(models.Model):
     compiling. It has always a author called user.
     """
 
-    created_by = models.ForeignKey(User, related_name="Card Created By",
+    created_by = models.ForeignKey(User, related_name="card_created_by",
             null=True, on_delete=models.SET_NULL)
     subsection = models.ForeignKey(Subsection, blank=True, null=True,
             on_delete=models.SET_NULL)
