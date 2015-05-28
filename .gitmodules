@@ -1,3 +1,3 @@
 [submodule "wsgi/pykarten/karte"]
 	path = wsgi/pykarten/karte
-	url = git@github.com:willianpaixao/karte.git
+	url = https://github.com/willianpaixao/karte.git
