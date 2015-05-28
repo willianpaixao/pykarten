@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'foundation',
     'pykarten',
+    'karte',
 )
 
 MIDDLEWARE_CLASSES = (

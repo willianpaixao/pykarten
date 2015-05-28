@@ -1,6 +1,7 @@
 *.bak
 *.orig
 *.py[co]
+*.sqlite3
 *.sw[po]
 *~
 .env/
